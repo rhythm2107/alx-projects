@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz 07</title>
+</head>
+
+<body>
+
+    <h1>Formularz rezerwacji biletu lotniczego</h1>
+    <form method="get">
+
+        <p>
+            Twoje imię:</br>
+            <input type="text" name="name" />
+        </p>
+
+        <p>
+            Twoje nazwisko:</br>
+            <input type="text" name="surname" />
+        </p>
+
+        <p>
+            Data wylotu:</br>
+            <input type="text" name="date" />
+        </p>
+
+        <p>
+            Wylot z:</br>
+            <select name="from-town">
+                <option>Paryż</option>
+                <option>Londyn</option>
+                <option>Gdańsk</option>
+            </select>
+        </p>
+
+        <p>
+            Przylot do:</br>
+            <select name="to-town">
+                <option>Szczecin</option>
+                <option>Berlin</option>
+                <option>Praga</option>
+            </select>
+        </p>
+
+        <p>
+            Klasa VIP:</br>
+            <input type="radio" name="VIP" value="yes" /> Tak
+            <input type="radio" name="VIP" value="no" /> Nie
+        </p>
+
+        <p>
+            Posiłek:</br>
+            <input type="checkbox" name="food1" value="przystawka" /> Przystawka
+            <input type="checkbox" name="food2" value="obiad" /> Obiad
+            <input type="checkbox" name="food3" value="deser" /> Deser
+        </p>
+
+        <p>
+            Dodatkowe uwagi:</br>
+            <textarea name="notes"></textarea>
+        </p>
+
+        <input type="submit" value="Zarezerwuj" />
+        <input type="reset" value="Anuluj" />
+
+    </form>
+</body>
+
+</html>
