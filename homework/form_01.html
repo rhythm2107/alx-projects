@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Form Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            width: 350px;
+        }
+
+        .id_data label,
+        .contact_person label, .config_data label {
+            display: block;
+            margin-top: 20px;
+        }
+
+        input[type="text"], input[type="password"],
+        select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            width: 49%;
+            display: inline-block;
+            box-sizing: border-box
+        }
+
+        hr {
+            height: 3px;
+            background-color: #333;
+            width: 20vw;
+            border: none;
+        }
+
+        .additional_info label {
+            display: inline-block;
+            margin-right: 20px;
+            width: auto;
+        }
+
+        input[type="text"]:disabled {
+            background-color: #f0f0f0;
+        }
+
+        .additional_info div {
+            margin-left: 20px;
+            padding: 5px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>W celu uzyskania uprawnień należy:</p>
+    <ol>
+        <li>Wypełnić poniższy formularz.</li>
+        <li>Wydrukować kopię wypełnionego formularza.</li>
+        <li>Przesłać wydrukowany formularz pocztą.</li>
+    </ol>
+
+    <form method="post">
+        <div class="id_data">
+            <h1>Dane Identyfikacyjne</h1>
+            <hr>
+            <label for="company">Firma:</label>
+            <input type="text" id="company" name="company">
+
+            <label for="street">Ulica:</label>
+            <input type="text" id="street" name="street">
+
+            <label for="city">Miejscowosc:</label>
+            <input type="text" id="city" name="city">
+
+            <label for="postal_code">Kod pocztowy:</label>
+            <input type="text" id="postal_code" name="postal_code">
+
+            <label for="nip">NIP:</label>
+            <input type="text" id="nip" name="nip">
+
+            <label for="website">WWW:</label>
+            <input type="text" id="website" name="website">
+        </div>
+
+        <h1>Osoba Kontaktowa</h1>
+        <div class="contact_person">
+            <hr>
+            <label for="first_name">Imie:</label>
+            <input type="text" id="first_name" name="first_name">
+
+            <label for="last_name">Nazwisko:</label>
+            <input type="text" id="last_name" name="last_name">
+
+            <label for="phone">Telefon:</label>
+            <input type="text" id="phone" name="phone">
+
+            <label for="country">Kraj:</label>
+            <select id="country" name="country">
+                <option value="" disabled selected>Wybierz</option>
+                <option value="poland">Polska</option>
+                <option value="germany">Niemcy</option>
+                <option value="france">Francja</option>
+            </select>
+
+            <label for="fax">Faks:</label>
+            <input type="text" id="fax" name="fax">
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email">
+        </div>
+
+        <div class="additional_info">
+            <h1>Informacje dodatkowe</h1>
+            <hr>
+            <label>Zakupy:</label>
+            <div>
+                <input type="radio" id="detaliczne" name="shopping_type" value="detaliczne">
+                <label for="detaliczne">Detaliczne</label>
+
+                <input type="radio" id="hurtowe" name="shopping_type" value="hurtowe">
+                <label for="hurtowe">Hurtowe</label>
+            </div>
+
+            <label>Prowadze:</label>
+            <div>
+                <input type="checkbox" id="hurtownie" name="business_type" value="hurtownie">
+                <label for="hurtownie">Hurtownie</label>
+
+                <input type="checkbox" id="salon" name="business_type" value="salon">
+                <label for="salon">Salon</label>
+
+                <input type="checkbox" id="sklep" name="business_type" value="sklep">
+                <label for="sklep">Sklep</label>
+
+                <input type="checkbox" id="punkt_gsm" name="business_type" value="punkt_gsm">
+                <label for="punkt_gsm">Punkt GSM</label>
+
+                <input type="checkbox" id="inny" name="business_type" value="inny">
+                <label for="inny">Inny</label>
+            </div>
+        </div>
+
+        <div class="config_data">
+            <h1>Dane konfiguracyjne</h1>
+            <hr>
+            <label for="login">Login:</label>
+            <input type="text" id="login" name="login">
+
+            <label for="password">Haslo:</label>
+            <input type="password" id="password" name="password">
+
+            <label for="confirm_password">Powtorz haslo:</label>
+            <input type="password" id="confirm_password" name="confirm_password">
+
+            <label><input type="checkbox" id="terms" name="terms">Wyrażam zgodę na przetwarzanie danych osobowych.</label>
+            
+            <p>Regulamin do pobrania <a href="http://example.com/">tutaj</a></p>
+
+            <button type="submit">Wyslij Dane</button>
+            <button type="reset">Wyczysc Dane</button>
+        </div>
+    </form>
+</body>
+
+</html>
