@@ -1,0 +1,124 @@
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vw;
+    align-items: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.warranty, .product, .information {
+    width: 50%;
+    margin-bottom: 20px;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+}
+
+.product {
+    height: 280px;
+}
+
+.information {
+    height: 500px;
+}
+
+label,
+input,
+textarea,
+select,
+.radio-div,
+.warranty label,
+.warranty input {
+    margin-left: 170px;
+}
+
+.warranty label {
+    margin-bottom: 1px;
+}
+
+.warranty input[type="radio"] {
+    margin-left: 2px;
+}
+
+.warranty .radio-div label,
+.notification-label label {
+    margin-left: 0px;
+}
+
+.notification-label input{
+    margin-left: 10px;
+}
+
+.notification-label {
+    margin-left: 160px;
+}
+
+.information input,
+.information textarea,
+.warranty input,
+.product input,
+.product select {
+    margin-bottom: 10px;
+}
+
+.warranty input[type="text"],
+.information input,
+.information textarea,
+.information select,
+.product input,
+.product select {
+    width: 50%;
+    box-sizing: border-box;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+    height: 28px;
+}
+
+p {
+    font-size: 30px;
+    margin-top: 0px;
+    color:#87878a;
+    margin-bottom: 35px;
+}
+
+h1 {
+    font-size: 30px;
+    color:#4f4f5e;
+}
+
+.embed-warranty {
+    border-left: 4px solid #2e9e5c;
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+    margin: 10px 0;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.embed-product {
+    border-left: 4px solid #87878a;
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+    margin: 10px 0;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.embed-information {
+    border-left: 4px solid #3d4bcc; /* Green color, change as needed */
+    background-color: #f9f9f9; /* Light grey background, optional */
+    padding: 10px 20px; /* Padding around the content */
+    margin: 10px 0; /* Space around the embed, optional */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+
+.product {
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.information {
+    width: 50%;
+}

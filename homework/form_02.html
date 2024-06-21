@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./form_02.css">
+    <title>Formularz Reklamacyjny</title>
+
+    <style>
+    </style>
+</head>
+
+<body>
+    <h1>Dopisanie zgłoszenia reklamacyjnego</h1>
+
+    <div class="warranty embed-warranty">
+        <p>Reklamujący</p>
+        <div class="radio-div">
+            <label for="gender">Pani</label>
+            <input type="radio" id="gender" name="gender_choice" value="female">
+
+            <label for="gender">Pan</label>
+            <input type="radio" id="gender" name="gender_choice" value="male">
+        </div>
+
+        <label for="name">Imię</label>
+        <input type="text" id="name" name="first_name">
+
+        <label for="surname">Nazwisko</label>
+        <input type="text" id="surname" name="last_name">
+
+        <label for="street">Ulica</label>
+        <input type="text" id="street" name="street_name">
+
+        <label for="postal_code">Kod Pocztowy</label>
+        <input type="text" id="postal_code" name="postal_code">
+
+        <label for="city">Miejscowość</label>
+        <input type="text" id="city" name="city_name">
+
+        <label for="phone">Nr telefonu</label>
+        <input type="text" id="phone" name="phone_number">
+
+        <label for="email">Adres email</label>
+        <input type="text" id="email" name="email_address">
+
+
+        <label>Sposób powiadomienia</label>
+        <div class="notification-label">
+            <input type="checkbox" id="notification" name="phone-sms" value="phone-sms">
+            <label for="notification">Telefon/SMS</label>
+
+            <input type="checkbox" id="email_notiifcation" name="email" value="email">
+            <label for="email_notiifcation">Email</label>
+        </div>
+
+    </div>
+
+    <div class="product embed-product">
+        <p>Reklamowany produkt</p>
+        <label for="items">Asortyment:</label>
+        <select id="items" name="asortyment">
+            <option value="" disabled selected>Wybierz</option>
+            <option value="item-1">Przedmiot 1</option>
+            <option value="item-2">Przedmiot 2</option>
+            <option value="item-3">Przedmiot 3</option>
+        </select>
+
+        <label for="serial">Numer Seryjny</label>
+        <input type="text" id="serial" name="serial_number">
+
+        <label for="notes">Uwagi</label>
+        <input type="text" id="notes" name="adnotations">
+    </div>
+
+    <div class="information embed-information">
+        <p>Dane zgłoszenia</p>
+        <label for="purchase_id">Numer dokumentu zakupu</label>
+        <input type="text" id="purchase_id" name="purchase_id_number">
+
+        <label for="purchase_date">Data zakupu</label>
+        <input type="date" id="purchase_date" name="date_of_purchase">
+
+        <label for="issue_date">Data powstania wady</label>
+        <input type="date" id="issue_date" name="date_of_issue">
+
+        <label for="reason">Przyczyna reklamacji</label>
+        <input type="text" id="reason" name="warranty_reason">
+
+        <label for="notes">Opis wady</label>
+        <textarea id="notes" name="notes" rows="4" cols="50">
+        </textarea>
+
+        <label for="expectation">Żądanie reklamującego</label>
+        <select id="expectation" name="expectation">
+            <option value="" disabled selected>Wybierz</option>
+            <option value="item-1">Naprawa produktu</option>
+            <option value="item-2">Zwrot pieniędzy</option>
+            <option value="item-3">Nowy model produktu</option>
+        </select>
+
+    </div>
+</body>
+
+</html>
