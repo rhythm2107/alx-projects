@@ -1,9 +1,14 @@
-body {
+body, form {
     display: flex;
     flex-direction: column;
     height: 100vw;
     align-items: center;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+form {
+    width: 100%;
+    height: 100%;
 }
 
 .warranty, .product, .information {
@@ -12,6 +17,7 @@ body {
     height: 650px;
     display: flex;
     flex-direction: column;
+    min-width:400px;
 }
 
 .product {
@@ -106,10 +112,10 @@ h1 {
 }
 
 .embed-information {
-    border-left: 4px solid #3d4bcc; /* Green color, change as needed */
-    background-color: #f9f9f9; /* Light grey background, optional */
-    padding: 10px 20px; /* Padding around the content */
-    margin: 10px 0; /* Space around the embed, optional */
+    border-left: 4px solid #3d4bcc;
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+    margin: 10px 0;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
@@ -121,4 +127,32 @@ h1 {
 
 .information {
     width: 50%;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #007BFF;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+button:hover, button:focus {
+    background-color: #0056b3;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    outline: none;
+}
+
+button[type="reset"] {
+    background-color: #dc3545;
+    margin-top: 25px;
+    margin-left: 32px;
+}
+
+button[type="reset"]:hover, button[type="reset"]:focus {
+    background-color: #bb2d3b;
 }

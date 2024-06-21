@@ -13,7 +13,7 @@
 
 <body>
     <h1>Dopisanie zgłoszenia reklamacyjnego</h1>
-
+    <form method="post">
     <div class="warranty embed-warranty">
         <p>Reklamujący</p>
         <div class="radio-div">
@@ -89,8 +89,7 @@
         <input type="text" id="reason" name="warranty_reason">
 
         <label for="notes">Opis wady</label>
-        <textarea id="notes" name="notes" rows="4" cols="50">
-        </textarea>
+        <textarea id="notes" name="notes" rows="4" cols="50"></textarea>
 
         <label for="expectation">Żądanie reklamującego</label>
         <select id="expectation" name="expectation">
@@ -99,8 +98,13 @@
             <option value="item-2">Zwrot pieniędzy</option>
             <option value="item-3">Nowy model produktu</option>
         </select>
-
     </div>
+    <div class="buttons">
+        <button type="submit">Wyslij Dane</button>
+        <button type="reset">Wyczysc Dane</button>
+    </div>
+</form>
 </body>
+
 
 </html>
