@@ -1,40 +1,16 @@
 <script>
 
-    let numberOne = Number(prompt('Podaj liczbe 1'))
-    let numberTwo = Number(prompt('Podaj liczbe 2'))
-    let numberThree = Number(prompt('Podaj liczbe 3'))
+    let weight = Number(prompt('Podaj wage'))
+    let height = Number(prompt('Podaj wzrost'))
 
-    if (numberOne <= numberTwo && numberOne <= numberThree) {
-        smallest = numberOne
-        if (numberTwo <= numberThree) {
-            middle = numberTwo
-            largest = numberThree
-        } else {
-            middle = numberThree
-            largest = numberTwo
-        }
+    let bmi = (weight / (height*height))
 
-    } else if (numberTwo <= numberOne && numberTwo <= numberThree) {
-        smallest = numberTwo
-        if (numberOne <= numberThree) {
-            middle = numberOne
-            largest = numberThree
-        } else {
-            middle = numberThree
-            largest = numberOne
-        }
-
+    if (bmi < 18.5) {
+        console.log("Niedowaga")
+    } else if (bmi <= 24.9) {
+        console.log("Waga prawidlowa")
     } else {
-        smallest = numberThree
-        if (numberOne <= numberTwo) {
-            middle = numberOne
-            largest = numberTwo
-        } else {
-            middle = numberTwo
-            largest = numberOne
-        }
+        console.log("Nadwaga")
     }
-
-    console.log(`Numbers in ascending order: ${smallest}, ${middle}, ${largest}`)
 
 </script>
