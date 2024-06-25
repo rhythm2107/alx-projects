@@ -1,10 +1,14 @@
 <script>
 
-    let bread = 1.70
-    let milk = 2.50
-    let candy = 12
+    let breadCost = 1.70
+    let milkCost = 2.50
+    let candyCost = 12
 
-    totalCost = (2 * bread) + (3 * milk) + (5 * candy)
+    let breadQuantity = Number(prompt('Podaj liczbe chleba'))
+    let milkQuantity = Number(prompt('Podaj liczbe mleka'))
+    let candyQuantity = Number(prompt('Podaj liczbe cukierkow'))
+
+    totalCost = (breadQuantity * breadCost) + (milkQuantity * milkCost) + (candyCost * candyQuantity)
     console.log(totalCost)
 
 </script>>
