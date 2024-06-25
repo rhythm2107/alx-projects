@@ -1,0 +1,37 @@
+<script>
+
+    let numberOne = Number(prompt('Podaj liczbe 1'))
+    let numberTwo = Number(prompt('Podaj liczbe 2'))
+    let numberThree = Number(prompt('Podaj liczbe 3'))
+    let numberFour = Number(prompt('Podaj liczbe 4'))
+
+    let smallestNumber = numberOne
+    let largestNumber = numberOne
+
+    if (numberTwo < smallestNumber) {
+        smallestNumber = numberTwo
+    }
+
+    if (numberThree < smallestNumber) {
+        smallestNumber = numberThree
+    }
+
+    if (numberFour < smallestNumber) {
+        smallestNumber = numberFour
+    }
+
+    if (numberTwo > largestNumber) {
+        largestNumber = numberTwo
+    }
+
+    if (numberThree > largestNumber) {
+        largestNumber = numberThree
+    }
+
+    if (numberFour > largestNumber) {
+        largestNumber = numberFour
+    }
+
+    console.log(smallestNumber, largestNumber)
+
+</script>

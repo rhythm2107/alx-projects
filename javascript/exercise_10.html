@@ -1,0 +1,21 @@
+<script>
+
+    let numberOne = Number(prompt('Podaj liczbe 1'))
+    let numberTwo = Number(prompt('Podaj liczbe 2'))
+    let numberThree = Number(prompt('Podaj liczbe 3'))
+
+    let numberOneSquared = numberOne * numberOne
+    let numberTwoSquared = numberTwo * numberTwo
+    let numberThreeSquared = numberThree * numberThree
+
+    if (numberOneSquared + numberTwoSquared === numberThreeSquared) {
+        console.log('Z podanych boków można zbudowac trojkat prostokatny.')
+    } else if (numberOneSquared + numberThreeSquared === numberTwoSquared) {
+        console.log('Z podanych boków można zbudowac trojkat prostokatny.')
+    } else if (numberTwoSquared + numberThreeSquared === numberOneSquared) {
+        console.log('Z podanych boków można zbudowac trojkat prostokatny.')
+    } else {
+        console.log('Z podanych boków nie można zbudowac trojkatu prostokatnego.')
+    }
+
+</script>
