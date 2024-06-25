@@ -1,0 +1,40 @@
+<script>
+
+    let numberOne = Number(prompt('Podaj liczbe 1'))
+    let numberTwo = Number(prompt('Podaj liczbe 2'))
+    let numberThree = Number(prompt('Podaj liczbe 3'))
+
+    if (numberOne <= numberTwo && numberOne <= numberThree) {
+        smallest = numberOne
+        if (numberTwo <= numberThree) {
+            middle = numberTwo
+            largest = numberThree
+        } else {
+            middle = numberThree
+            largest = numberTwo
+        }
+
+    } else if (numberTwo <= numberOne && numberTwo <= numberThree) {
+        smallest = numberTwo
+        if (numberOne <= numberThree) {
+            middle = numberOne
+            largest = numberThree
+        } else {
+            middle = numberThree
+            largest = numberOne
+        }
+        
+    } else {
+        smallest = numberThree
+        if (numberOne <= numberTwo) {
+            middle = numberOne
+            largest = numberTwo
+        } else {
+            middle = numberTwo
+            largest = numberOne
+        }
+    }
+    
+    console.log(`Numbers in ascending order: ${smallest}, ${middle}, ${largest}`)
+
+</script>
