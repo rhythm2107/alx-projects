@@ -1,13 +1,15 @@
 <script>
 
-    let number = 6
+    let sum = 0
 
-    for (let i = 1; i <=10; i++) {
-        if (i === number) {
-            console.log('Twoja szcesliwa 6!')
-        } else {
-            console.log(i)
+    for (let i = 1; i <= 10; i++) {
+        let number = Number(prompt('Podaj liczbe'))
+
+        if (number % 2 === 0) {
+            sum += number
         }
     }
+
+    console.log(sum)
 
 </script>
