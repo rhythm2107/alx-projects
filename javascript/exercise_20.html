@@ -1,0 +1,17 @@
+<script>
+
+    let randomNumber = Math.floor(Math.random() * 100 + 1)
+
+    while (true) {
+        playerGuess = Number(prompt('Podaj liczbe'))
+
+        if (playerGuess === randomNumber) {
+            console.log('Gratulacje')
+            break
+        } else if (playerGuess > randomNumber) {
+            console.log('Podales za duza liczbe')
+        } else {
+            console.log('Podales za mala liczbe')
+        }
+    }
+</script>
