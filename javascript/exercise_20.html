@@ -1,9 +1,11 @@
 <script>
 
     let randomNumber = Math.floor(Math.random() * 100 + 1)
+    let guessCount = 5
 
-    while (true) {
+    while (guessCount != 0) {
         playerGuess = Number(prompt('Podaj liczbe'))
+        guessCount--
 
         if (playerGuess === randomNumber) {
             console.log('Gratulacje')
@@ -13,5 +15,10 @@
         } else {
             console.log('Podales za mala liczbe')
         }
+
+        if (guessCount === 0) {
+            console.log('Przegrales!')
+            break;
+        }   
     }
 </script>
