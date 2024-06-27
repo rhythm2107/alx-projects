@@ -1,0 +1,19 @@
+<script>
+
+    let word = 'programowanie'
+    let word2 = 'javascript'
+    const foundLetters = []
+
+    for (let i = 0; i < word.length; i++) {
+        for (let j = 0; j < word2.length; j++) {
+            if (word[i] === word2[j]) {
+                if (!foundLetters.includes(word[i])) {
+                    foundLetters.push(word[i])
+                    console.log(`Litera ${word[i]} wystepuje w obu zmiennych.`)
+                }
+                break
+                }
+            }
+        }
+
+</script>

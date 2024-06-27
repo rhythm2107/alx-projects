@@ -1,0 +1,24 @@
+<script>
+
+    const numberList = []
+
+    while (true) {
+        number = Number(prompt('Podaj liczbe calkowita'))
+
+        if (number != 0) {
+            numberList.push(number)
+        } else {
+            break
+        }
+    }
+
+    let sum = 0
+    for (number of numberList) {
+        console.log(number)
+        sum += number
+    }
+
+    let average = sum / numberList.length
+    console.log('Average', average)
+    
+</script>
