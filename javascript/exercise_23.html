@@ -1,0 +1,24 @@
+<script>
+
+    let liczba = (prompt('Podaj liczbe zlozona z cyfr od 1 do 5'))
+    const resultArray = []
+
+    for (let i = 0; i < liczba.length; i++) {
+
+        if (liczba[i] == '1') {
+            resultArray.push('jeden')
+        } else if (liczba[i] == '2') {
+            resultArray.push('dwa')
+        } else if (liczba[i] == '3') {
+            resultArray.push('trzy')
+        } else if (liczba[i] == '4') {
+            resultArray.push('cztery')
+        } else if (liczba[i] == '5') {
+            resultArray.push('piec')
+        }
+    }
+    
+    console.log(resultArray.join(' '))
+
+    
+</script>

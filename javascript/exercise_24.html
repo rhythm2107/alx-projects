@@ -1,0 +1,21 @@
+<script>
+
+    let word = 'programowanie'
+    
+
+    for (let i = 0; i < word.length; i++) {
+        let count = 0
+        let y = ''
+        for (let j = 0; j < word.length; j++) {
+            if (word[i] === word[j]) {
+                count++
+            }
+        }
+
+        if (count > 1) {
+            y = 'y'
+        }
+        console.log(`Litera ${word[i]} wystepuje ${count} raz${y}`)
+    }
+
+</script>
