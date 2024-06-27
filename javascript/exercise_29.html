@@ -1,0 +1,32 @@
+<script>
+
+    const arrayOfNumbers = []
+    const uniqueNumbers = []
+
+    // Generate random numbers in arrayOfNumbers
+    for (let i = 0; i < 10; i++) {
+        let randomNumber = Math.floor(Math.random() * 10 + 1)
+        arrayOfNumbers.push(randomNumber)
+    }
+
+    // Compare numbers and save unique ones
+    for (let i = 0; i < arrayOfNumbers.length; i++) {
+        let number = arrayOfNumbers[i]
+        let isUnique = true
+
+        for (let j = 0; j < arrayOfNumbers.length; j++) {
+            if (i !== j && number === arrayOfNumbers[j]) {
+                isUnique = false
+                break
+            }
+        }
+
+        if (isUnique === true) {
+            uniqueNumbers.push(number)
+        }
+    }
+
+    console.log(arrayOfNumbers)
+    console.log(uniqueNumbers)
+
+</script>

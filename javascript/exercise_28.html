@@ -1,0 +1,31 @@
+<script>
+
+    const arrayOfNumbers = []
+
+    for (let i = 0; i < 10; i++) {
+        let randomNumber = Math.floor(Math.random() * 100 + 1)
+        arrayOfNumbers.push(randomNumber)
+    }
+
+    let smallestNumber = arrayOfNumbers[0]
+    let biggestNumber = arrayOfNumbers[0]
+
+    for (number of arrayOfNumbers) {
+
+        if (number < smallestNumber) {
+            smallestNumber = number
+        }
+
+        if (number > biggestNumber) {
+            biggestNumber = number
+        }
+    }
+
+    console.log(arrayOfNumbers)
+    console.log(smallestNumber, biggestNumber)
+
+    // Albo po prostu :D
+    // let smallestNumber = Math.min(...arrayOfNumbers)
+    // let biggestNumber = Math.max(...arrayOfNumbers)
+
+</script>
