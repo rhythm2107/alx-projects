@@ -1,0 +1,17 @@
+<script>
+
+    const randomNumbers = new Set()
+    let attempts = 0
+
+    while (randomNumbers.size < 6) {
+        attempts++
+
+        let randomNumber = Math.floor(Math.random() * 10 + 1)
+        randomNumbers.add(randomNumber)
+    }
+
+    console.log(...randomNumbers)
+    console.log(`Attempts: ${attempts - 5}`)
+
+
+</script>
