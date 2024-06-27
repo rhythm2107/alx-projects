@@ -1,0 +1,20 @@
+<script>
+
+    const numberDictionary = new Map([
+        ['jeden', 1],
+        ['dwa', 2],
+        ['trzy', 3],
+        ['cztery', 4],
+        ['piec', 5]
+    ])
+    
+    let numberOneString = prompt('Podaj liczbe 1')
+    let numberTwoString = prompt('Podaj liczbe 2')
+
+    let numberOne = numberDictionary.get(numberOneString)
+    let numberTwo = numberDictionary.get(numberTwoString)
+
+    let sum = numberOne + numberTwo
+    console.log(sum)
+
+</script>
