@@ -1,0 +1,68 @@
+<script>
+
+    let sklep = new Map();
+    sklep.set("chleb", 3.50);
+    sklep.set("sok", 6);
+    sklep.set("woda", 1.80);
+    sklep.set("cukier", 4.25);
+
+    let koszyk = [];
+
+    while (true) {
+
+        let menu = Number(prompt("Witaj w sklepie\n 1- Dodaj produkt do koszyka\n 2- Pokaz zawartosc koszyka\n 3- Kasa/koniec"));
+
+        if (menu == 1) {
+            let produkt = prompt("Podaj nazwe produktu");
+
+            if (sklep.has(produkt)) {
+                koszyk.push(produkt)
+                console.log(`${produkt} zostal dodany do koszyka!`)
+            } else {
+                console.log('Brak produktu w sklepie!')
+            }
+        }
+
+        else if (menu == 2) {
+
+            for (produkt of koszyk) {
+                console.log(`Produkt: ${produkt}`)
+            }
+
+        }
+
+        else if (menu == 3) {
+            let suma = 0
+            console.log("PARAGON");
+
+            for (produkt of koszyk) {
+                let cena = sklep.get(produkt)
+                suma += cena
+                console.log(`Produkt: ${produkt} | Cena: ${cena}`)
+            }
+            console.log(`RAZEM DO ZAPLATY: ${suma}`)
+            break
+
+        }
+        else if (menu == 4) {
+            let produkt = prompt("Podaj produkt do skasowania")
+            let isRemoved = false
+
+            for (let i = 0; i < koszyk.length; i++) {
+                if (koszyk[i] === produkt) {
+                    koszyk.splice(i, 1)
+                    console.log(`${produkt} zostal usuniety z koszyka`)
+                    isRemoved = true
+                    break
+                }
+            }
+
+            if (!isRemoved) {
+                console.log("Podany produkt nie jest w twoim koszyku!")
+            }
+
+        }
+
+    }
+
+</script>

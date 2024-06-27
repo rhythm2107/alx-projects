@@ -1,0 +1,25 @@
+<script>
+
+    const numberList = []
+    const numberMap = new Map()
+
+    while (true) {
+        let number = Number(prompt('Podaj liczbe'))
+
+        if (number === 0) {
+            break
+        }
+        numberList.push(number)
+    }
+
+    for (let number of numberList) {
+        if (numberMap.has(number)) {
+            numberMap.set(number, numberMap.get(number) + 1)
+        } else {
+            numberMap.set(number, 1)
+        }
+    }
+
+    console.log(numberMap)
+
+</script>
