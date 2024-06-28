@@ -1,0 +1,35 @@
+<script>
+
+    const arrayOne = []
+    const arrayTwo = []
+    const numberMap = new Map()
+    const commonNumbers = []
+
+    for (let i = 0; i < 10; i++) {
+        randomNumberOne = Math.floor(Math.random() * 10 + 1)
+        randomNumberTwo = Math.floor(Math.random() * 10 + 1)
+
+        arrayOne.push(randomNumberOne)
+        arrayTwo.push(randomNumberTwo)
+    }
+
+    for (number of arrayOne) {
+        numberMap.set(number, true)
+    }
+
+    for (number of arrayTwo) {
+        if (numberMap.has(number)) {
+            commonNumbers.push(number)
+        }
+    }
+
+    let highestNumber = commonNumbers[0]
+    for (number of commonNumbers) {
+        if (number > highestNumber) {
+            highestNumber = number
+        }        
+    }
+
+    console.log(highestNumber)
+
+</script>

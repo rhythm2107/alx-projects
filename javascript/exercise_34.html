@@ -1,0 +1,79 @@
+<script>
+
+    let sklep = new Map();
+    sklep.set("chleb", 3.50);
+    sklep.set("sok", 6);
+    sklep.set("woda", 1.80);
+    sklep.set("cukier", 4.25);
+
+    let koszyk = new Map(); // {"woda":2, "sok":10, "cukier":1}
+
+    while (true) {
+
+        let menu = Number(prompt("Witaj w sklepie \n1-dodaj produkt do koszyka, \n2-pokaz zawartosc koszyka, \n3-usun produkt, \n4-kasa/koniec"));
+
+        if (menu == 1) {
+            let produkt = prompt("Podaj nazwe produktu:");
+
+            if (sklep.has(produkt)) {
+                let ilosc = Number(prompt("Podaj ilosc produktu:"));
+
+                if (ilosc > 0) {
+                    if (koszyk.has(produkt)) {
+                        koszyk.set(produkt, ilosc + koszyk.get(produkt))
+                    } else {
+                        koszyk.set(produkt, ilosc)
+                    }
+                    console.log("Produkt dodany do koszyka")
+                } else {
+                    console.log("Podales bledna ilosc produktu, liczba musi byc powyzej 0!")
+                }
+            } else {
+                console.log("Produktu nie ma w sklepie!")
+            }
+
+        }
+        else if (menu == 2) {
+            for (const [produkt, ilosc] of koszyk) {
+                console.log(`Produkt: ${produkt} Ilosc: ${ilosc}`)
+            }
+
+
+        }
+        else if (menu == 3) {
+            let produkt = prompt("Podaj nazwe produktu:");
+
+            if (koszyk.has(produkt)) {
+                let ilosc = Number(prompt("Podaj ilosc produktu:"));
+                let currentQuantity = koszyk.get(produkt)
+
+                if (ilosc === currentQuantity) {
+                    koszyk.delete(produkt)
+                } else if (ilosc > currentQuantity) {
+                    console.log("Probujesz usunac wiecej ilosci produktu niz posiadasz w koszyku!")
+                } else if (ilosc < currentQuantity) {
+                    koszyk.set(produkt, koszyk.get(produkt) - ilosc)
+                }
+
+            }
+
+        }
+        else if (menu == 4) {
+
+            for (const [produkt, ilosc] of koszyk) {
+                let cena = sklep.get(produkt)
+                let wartosc = cena * ilosc
+
+                console.log(`Produkt: ${produkt} Ilosc: ${ilosc} Cena: ${cena} Wartosc: ${wartosc}`)
+            }
+
+        }
+        else {
+            console.log("Nierozpoznana opcja menu");
+        }
+
+
+
+    }
+
+</script>
