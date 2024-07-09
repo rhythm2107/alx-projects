@@ -1,5 +1,112 @@
 <script>
 
-    
+    let sklep = new Map();
+    sklep.set("woda", 2.50);
+    sklep.set("cola", 3.50);
+    sklep.set("fanta", 4.50);
 
+    class Koszyk {
+        constructor() {
+            this.zakupy = new Map();
+        }
+
+        zakupy;
+
+        dodajProdukt(produkt, ilosc) {
+
+            if (sklep.has(produkt)) {
+                if (this.zakupy.has(produkt)) {
+                    this.zakupy.set(produkt, this.zakupy.get(produkt) + ilosc)
+                    console.log(this.zakupy)
+
+                } else {
+                    this.zakupy.set(produkt, ilosc)
+                    console.log(this.zakupy)
+                }
+            } else {
+                console.log("Sklep nie posiada tego produktu!")
+            }
+        }
+
+        usunProdukt(produkt, ilosc) {
+
+            if (this.zakupy.has(produkt)) {
+                if (this.zakupy.get(produkt) === ilosc) {
+                    this.zakupy.delete(produkt)
+
+                } else if (this.zakupy.get(produkt) > ilosc) {
+                    this.zakupy.set(produkt, this.zakupy.get(produkt) - ilosc)
+
+                } else if (this.zakupy.get(produkt) < ilosc) {
+                    console.log(`Podana bledna ilosc! W koszyku jest ${this.zakupy.produkt} ilosci tego produktu.`)
+                }
+
+            } else {
+                console.log("Tego produktu nie ma w twoim koszyku!")
+            }
+        }
+
+        wydrukujParagon() {
+            let wartoscKoszyka = 0
+            console.log("PARAGON")
+
+            for (const [produkt, ilosc] of this.zakupy.entries()) {
+                let wartoscProduktow = sklep.get(produkt) * ilosc
+                console.log(`Produkt: ${produkt} Ilosc: ${ilosc} Cena: ${sklep.get(produkt)} Wartosc: ${wartoscProduktow}`)
+
+                wartoscKoszyka += wartoscProduktow
+            }
+
+            console.log(`RAZEM DO ZAPLATY: ${wartoscKoszyka}`)
+        }
+
+    }
+
+    let koszyk = new Koszyk();
+    koszyk.dodajProdukt("woda", 5);
+    koszyk.dodajProdukt("cola", 2);
+    koszyk.dodajProdukt("woda", 3);
+    console.log(koszyk);
+
+    console.log("***********************");
+    koszyk.usunProdukt("woda", 5);
+    console.log(koszyk);
+
+    while (true) {
+
+        let menu = Number(prompt("1-dodaj produkt do koszyka, 2-pokaz zawartosc koszyka, 3-usun produkt z koszyka, 4-kasa/koniec"));
+
+        if (menu == 1) {
+            let produkt = prompt("Podaj nazwe produktu:");
+
+            if (sklep.has(produkt)) {
+                let ilosc = Number(prompt("Podaj ilosc produktu:"));
+                koszyk.dodajProdukt(produkt, ilosc)
+            } else {
+                console.log("Podanego produktu nie ma w sklepie!")
+            }
+        }
+
+        else if (menu == 2) {
+            for (const [produkt, ilosc] of koszyk.zakupy.entries()) {
+                console.log(`Produkt: ${produkt} Ilosc: ${ilosc}`)
+            }
+
+        }
+        else if (menu == 3) {
+            let produkt = prompt("Podaj nazwe produktu:");
+
+            if (koszyk.zakupy.has(produkt)) {
+                let ilosc = Number(prompt("Podaj ilosc produktu:"));
+                koszyk.usunProdukt(produkt, ilosc)
+            } else {
+                console.log("Podanego produktu nie ma w koszyku!")
+            }
+
+        }
+        else if (menu == 4) {
+            koszyk.wydrukujParagon()
+            break;
+        }
+    }
 </script>

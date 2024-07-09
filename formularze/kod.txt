@@ -1,56 +1,115 @@
 <script>
 
-class Student{
+let sklep = new Map();
+sklep.set("woda", 2.50);
+sklep.set("cola", 3.50);
+sklep.set("fanta", 4.50);
 
-    //imie, nazwisko, oceny
+class Koszyk{
+
+    zakupy;
+
+    constructor(){
+        this.zakupy = new Map();
+    }
+
+    dodajProdukt(produkt, ilosc){
+
+        /*
+
+        1. jezeli dodajemy produkt do koszyka ktory juz wczesniej zostal dodany
+
+        obecnie w koszyku: woda - 8szt
+
+        dodajemy: woda - 2szt
+
+        nowa zawartosc koszyka: woda - 10szt.
+
+
+        2. jezeli dodajemy do koszyka produkt ktory jeszcze nie zostal dodany
+
+        dodajemy: cola - 5 szt.
+
+        zawartosc koszyka: cola - 5 szt.
+
+        */
+
+    }
+
+    usunProdukt(produkt, ilosc){
+
+        /*
+
+        1. jezeli ilosc w koszyku jest > od ilosci usuwanej
+
+        to odejmujemy ilosc w koszyku o wskazana wartosc
+
+        2. jezeli ilosc w koszyku jest == od ilosci usuwanej
+
+        to usuwamy caly produkt z koszyka, nie trzymamy stanow zerowych
+
+        3. jezeli ilosc w koszyku jest < od ilosci usuwanej
+
+        to komunikat o blednej ilosc
+
+        */
+        
+    }
 
 }
 
-let listaStudentow = [];
+let koszyk = new Koszyk();
+// koszyk.dodajProdukt("woda", 5);
+// koszyk.dodajProdukt("cola", 2);
+// koszyk.dodajProdukt("woda", 3);
+// console.log(koszyk);
 
-while(true){
+// cosnole.log("***********************");
+// koszyk.usunProdukt("woda", 5);
+// console.log(koszyk);
 
-    let menu = Number(prompt("1-dodaj studenta, 2-wypisz studentow, 3-usun studenta, 4-dodaj ocene studentowi, 5-wypisz oceny studenta, 6-wypisz srednia studenta, 7-koniec"));
 
 
-    if(menu == 1){
 
-        let imie = prompt("Podaj imie:");
-        let nazwisko = prompt("Podaj nazwisko:");
-    }
-    else if(menu == 2){
 
-        //Imie: .. Nazwisko: ...
-        //Imie: .. Nazwisko: ...
-        //Imie: .. Nazwisko: ...
-    
-    }
-    else if(menu == 3){
-        let nazwisko = prompt("Podaj nazwisko:");
 
-    }
-    else if(menu == 4){
 
-        let nazwisko = prompt("Podaj nazwisko:");
-        let ocena = Number(prompt("Podaj ocene:"));
+
+
+
+
+// while(true){
+
+//     let menu = Number(prompt("1-dodaj produkt do koszyka, 2-pokaz zawartosc koszyka, 3-usun produkt z koszyka, 4-kasa/koniec"));
+
+//     if(menu == 1){
+//         let produkt = prompt("Podaj nazwe produktu:"); //sprawdzamy czy produkt jest w sklepie
+//         let ilosc = Number(prompt("Podaj ilosc produktu:")); //!!! o ilosc pytamy wtedy kiedy produkt jest w sklepie
+//     }
+//     else if(menu == 2){
+
+//         //Produkt: ... Ilosc: ...
+//         //Produkt: ... Ilosc: ...
+//         //Produkt: ... Ilosc: ...
         
+//     }
+//     else if(menu == 3){
+//         let produkt = prompt("Podaj nazwe produktu:"); //sprawdzamy czy produkt jest w koszyku
+//         let ilosc = Number(prompt("Podaj ilosc produktu:")); //!!! o ilosc pytamy wtedy kiedy produkt jest w koszyku
+//     }
+//     else if(menu == 4){
+
+//         console.log("PARAGON");
+
+//         //Produkt: ... Ilosc: ... Cena: ... Wartosc: ...
+//         //Produkt: ... Ilosc: ... Cena: ... Wartosc: ...
+//         //Produkt: ... Ilosc: ... Cena: ... Wartosc: ...
+
+//         //RAZEM DO ZAPLATY: .... PLN
+//         break;
         
-    }
-    else if(menu == 5){
-
-        let nazwisko = prompt("Podaj nazwisko:");
-        
-    }
-    else if(menu == 6){
-
-        let nazwisko = prompt("Podaj nazwisko:");
- 
-    }
-    else if(menu == 7){
-        break;
-    }
-
-}
+//     }
+// }
 
 
 
