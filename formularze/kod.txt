@@ -1,0 +1,58 @@
+<script>
+
+class Student{
+
+    //imie, nazwisko, oceny
+
+}
+
+let listaStudentow = [];
+
+while(true){
+
+    let menu = Number(prompt("1-dodaj studenta, 2-wypisz studentow, 3-usun studenta, 4-dodaj ocene studentowi, 5-wypisz oceny studenta, 6-wypisz srednia studenta, 7-koniec"));
+
+
+    if(menu == 1){
+
+        let imie = prompt("Podaj imie:");
+        let nazwisko = prompt("Podaj nazwisko:");
+    }
+    else if(menu == 2){
+
+        //Imie: .. Nazwisko: ...
+        //Imie: .. Nazwisko: ...
+        //Imie: .. Nazwisko: ...
+    
+    }
+    else if(menu == 3){
+        let nazwisko = prompt("Podaj nazwisko:");
+
+    }
+    else if(menu == 4){
+
+        let nazwisko = prompt("Podaj nazwisko:");
+        let ocena = Number(prompt("Podaj ocene:"));
+        
+        
+    }
+    else if(menu == 5){
+
+        let nazwisko = prompt("Podaj nazwisko:");
+        
+    }
+    else if(menu == 6){
+
+        let nazwisko = prompt("Podaj nazwisko:");
+ 
+    }
+    else if(menu == 7){
+        break;
+    }
+
+}
+
+
+
+
+</script>

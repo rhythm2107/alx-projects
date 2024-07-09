@@ -1,0 +1,120 @@
+<script>
+
+    class Student {
+        constructor(imie, nazwisko, oceny = []) {
+            this.imie = imie
+            this.nazwisko = nazwisko
+            this.oceny = oceny
+        }
+
+        imie;
+        nazwisko;
+        oceny;
+    }
+
+    let listaStudentow = [];
+
+    while (true) {
+
+        let menu = Number(prompt("1-dodaj studenta, 2-wypisz studentow, 3-usun studenta, 4-dodaj ocene studentowi, 5-wypisz oceny studenta, 6-wypisz srednia studenta, 7-koniec"));
+
+
+        if (menu == 1) {
+            let imie = prompt("Podaj imie:");
+            let nazwisko = prompt("Podaj nazwisko:");
+
+            let student = new Student(imie, nazwisko)
+            listaStudentow.push(student)
+            console.log(`${imie} ${nazwisko} zostal dodany do listy studentow.`)
+
+        }
+        else if (menu == 2) {
+            for (let student of listaStudentow) {
+                console.log(`Imie: ${student.imie} Nazwisko: ${student.nazwisko}`)
+            }
+
+        }
+        else if (menu == 3) {
+            let nazwisko = prompt("Podaj nazwisko:");
+            let isRemoved = false
+
+            for (const [index, student] of listaStudentow.entries()) {
+                if (student.nazwisko === nazwisko) {
+                    listaStudentow.splice(index, 1)
+                    isRemoved = true
+                    console.log(`Student ${student.imie} ${student.nazwisko} zostal usuniety z listy studentow.`)
+                }
+            }
+
+            if (!isRemoved) {
+                console.log('Nie znaleziono studenta o tym imieniu i nazwisku.')
+            }
+
+
+        }
+        else if (menu == 4) {
+            let nazwisko = prompt("Podaj nazwisko:");
+            let ocena = Number(prompt("Podaj ocene:"));
+            let isAdded = false
+
+            for (let student of listaStudentow) {
+                if (student.nazwisko === nazwisko) {
+                    student.oceny.push(ocena)
+                    isAdded = true
+                    console.log("Ocena zostala dodana do listy ocen studenta.")
+                }
+            }
+
+            if (!isAdded) {
+                console.log('Nie znaleziono studenta o tym imieniu i nazwisku.')
+            }
+
+
+        }
+        else if (menu == 5) {
+            let nazwisko = prompt("Podaj nazwisko:");
+            let isFound = false
+
+            for (let student of listaStudentow) {
+                if (student.nazwisko === nazwisko) {
+                    isFound = true
+                    console.log(student.imie, student.nazwisko)
+                    console.log(student.oceny)
+                }
+            }
+
+            if (!isFound) {
+                console.log('Nie znaleziono studenta o tym imieniu i nazwisku.')
+            }
+
+        }
+        else if (menu == 6) {
+            let nazwisko = prompt("Podaj nazwisko:");
+            let isFound = false
+
+            for (let student of listaStudentow) {
+                if (student.nazwisko === nazwisko) {
+                    isFound = true
+                    let sumaOcen = student.oceny.reduce((acc, num) => acc + num, 0)
+                    let sredniaStudenta = sumaOcen / student.oceny.length
+
+                    console.log(student.imie, student.nazwisko)
+                    console.log(sredniaStudenta)
+                }
+            }
+
+            if (!isFound) {
+                console.log('Nie znaleziono studenta o tym imieniu i nazwisku.')
+            }
+
+        }
+        else if (menu == 7) {
+            break;
+        }
+
+    }
+
+
+
+
+</script>
