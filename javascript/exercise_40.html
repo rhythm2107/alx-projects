@@ -1,0 +1,80 @@
+<script>
+
+    class Pracownik {
+        constructor(imie, nazwisko, telefon, email) {
+            this.imie = imie;
+            this.nazwisko = nazwisko;
+            this.telefon = telefon;
+            this.email = email;
+        }
+
+        imie;
+        nazwisko;
+        telefon;
+        email;
+    }
+
+    let listaPracownikow = [];
+
+    while (true) {
+        let menu = Number(prompt("1-dodaj pracownika, 2-pokaz pracownikow, 3-usun pracownika, 4-zmien dane pracownikowi, 5-koniec"));
+
+        if (menu == 1) {
+            let imie = prompt("Podaj imie:");
+            let nazwisko = prompt("Podaj nazwisko:");
+            let telefon = prompt("Podaj telefon:");
+            let email = prompt("Podaj email:");
+
+            let pracownik = new Pracownik(imie, nazwisko, telefon, email)
+            listaPracownikow.push(pracownik)
+        }
+
+        else if (menu == 2) {
+            for (let obj of listaPracownikow) {
+                console.log(`Imie: ${obj.imie} Nazwisko: ${obj.nazwisko} Telefon: ${obj.telefon} Email: ${obj.email}`)
+            }
+        }
+
+        else if (menu == 3) {
+            let nazwisko = prompt("Podaj nazwisko:");
+
+            for (const [index, object] of listaPracownikow.entries()) {
+                if (object.nazwisko === nazwisko) {
+                    listaPracownikow.splice(index, 1)
+                }
+            }
+        }
+
+        else if (menu == 4) {
+            let nazwisko = prompt("Podaj nazwisko:");
+            let nazwiskoExists = false
+
+            for (let object of listaPracownikow) {
+                if (object.nazwisko === nazwisko) {
+                    nazwiskoExists = true
+
+                    let noweImie = prompt("Podaj nowe imie:");
+                    let noweNazwisko = prompt("Podaj nowe nazwisko:");
+                    let nowyTelefon = prompt("Podaj nowy telefon:");
+                    let nowyEmail = prompt("Podaj nowy email:");
+
+                    object.imie = noweImie;
+                    object.nazwisko = noweNazwisko;
+                    object.telefon = nowyTelefon;
+                    object.email = nowyEmail;
+                }
+            }
+
+            if (!nazwiskoExists) {
+                console.log("Podane nazwisko nie istnieje w tablicy.")
+            }
+
+        }
+
+        else if (menu == 5) {
+            break;
+        }
+
+    }
+
+</script>

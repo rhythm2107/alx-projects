@@ -1,0 +1,158 @@
+<script>
+
+    class Kursant {
+        constructor(imie, nazwisko) {
+            this.imie = imie
+            this.nazwisko = nazwisko
+        }
+
+        imie;
+        nazwisko;
+    }
+
+    class Kurs {
+        constructor(nazwa, miasto, listaKursantow = []) {
+            this.nazwa = nazwa
+            this.miasto = miasto
+            this.listaKursantow = listaKursantow
+        }
+
+        nazwa;
+        miasto;
+        listaKursantow;
+    }
+
+    let listaKursow = [];
+
+    while (true) {
+
+        let menu = Number(prompt("1 - Dodaj Kurs, 2 - Pokaz Kursy, 3 - Usun Kursy, 4 - Dodaj kursanta do kursu, 5 - Wyswietl kurs wraz z kursantami, 6 - Usun kursanta z kursu, 7 - Koniec"))
+
+        if (menu === 1) {
+            let nazwa = prompt("Podaj nazwe kursu:");
+            let miasto = prompt("Podaj miasto:");
+
+            let kurs = new Kurs(nazwa, miasto)
+            listaKursow.push(kurs)
+        }
+
+        else if (menu === 2) {
+            for (let kurs of listaKursow) {
+                console.log(`Nazwa: ${kurs.nazwa} Miasto: ${kurs.miasto}`)
+            }
+        }
+
+        else if (menu === 3) {
+            // UWAGA!! kursu nie mozesz usunac jezeli sa zapisani do niego kursnaci - komunikat
+            let nazwa = prompt('Podaj nazwe kursu')
+            let miasto = prompt('Podaj miasto')
+            let isDeleted = false
+
+            for (const [index, object] of listaKursow.entries()) {
+                if (object.nazwa === nazwa && object.miasto === miasto) {
+                    if (object.listaKursantow.length === 0) {
+                        isDeleted = true
+                        listaKursow.splice(index, 1)
+                    } else {
+                        console.log("Kurs zawiera kursantow!")
+                    }
+                }
+            }
+
+            if (isDeleted) {
+                console.log("Kurs zostal skasowany!")
+            } else {
+                console.log("Nie znaleziono kursu o tej kombinacji nazwy i miasta")
+            }
+        }
+
+        else if (menu === 4) {
+            let nazwa = prompt("Podaj nazwe kursu:")
+            let miasto = prompt("Podaj nazwe miasta:")
+            let imie = prompt("Podaj imie kursanta:")
+            let nazwisko = prompt("Podaj nazwisko kursanta:")
+            let isFound = false
+
+            for (let object of listaKursow) {
+                if (object.nazwa === nazwa && object.miasto === miasto) {
+                    let kursant = new Kursant(imie, nazwisko)
+                    object.listaKursantow.push(kursant)
+
+                    isFound = true
+                    console.log(`Kursant ${imie} ${nazwisko} zostal dodany do kursu.`)
+                }
+            }
+
+            if (!isFound) {
+                console.log("Nie znaleziono kursu o podanej kombinacji nazwy i miasta.")
+            }
+
+        }
+
+
+        else if (menu === 5) {
+            let nazwa = prompt("Podaj nazwe kursu:")
+            let miasto = prompt("Podaj nazwe miasta:")
+            let isFound = false
+            let isEmpty = false
+
+            for (let object of listaKursow) {
+                if (object.nazwa === nazwa && object.miasto === miasto) {
+                    isFound = true
+                    console.log(object.nazwa, object.miasto)
+
+                    if (isFound) {
+                        for (let kursant of object.listaKursantow) {
+                            isEmpty = true
+                            console.log(kursant.imie, kursant.nazwisko)
+                        }
+                    }
+                }
+            }
+
+            if (!isEmpty) {
+                console.log("Lista kursantow jest pusta!")
+            }
+
+            if (!isFound) {
+                console.log("Nie znaleziono kursu o podanej kombinacji nazwy i miasta.")
+            }
+        }
+
+
+        else if (menu === 6) {
+            let nazwa = prompt("Podaj nazwe kursu:")
+            let miasto = prompt("Podaj nazwe miasta:")
+            let imie = prompt("Podaj imie kursanta:")
+            let isFound = false
+
+            for (let kurs of listaKursow) {
+                if (kurs.nazwa === nazwa && kurs.miasto === miasto) {
+                    isFound = true
+
+                    if (kurs.listaKursantow.length === 0) {
+                        console.log('Lista kursantow tego kursu jest pusta!')
+                        break
+
+                    } else {
+                        for (const [index, kursant] of kurs.listaKursantow.entries()) {
+                            if (kursant.imie === imie) {
+                                kurs.listaKursantow.splice(index, 1)
+                                console.log(`Kursant ${kursant.imie} ${kursant.nazwisko} zostal usuniety z kursu.`)
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (!isFound) {
+                console.log("Nie znaleziono kursu o podanej kombinacji nazwy i miasta.")
+            }
+
+            else if (menu === 7) {
+                break;
+            }
+        }
+    }
+
+</script>
