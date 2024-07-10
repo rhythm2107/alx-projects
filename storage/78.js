@@ -10,49 +10,57 @@ class Osoba {
     }
 }
 
-const showData = () => {
-    let daneStorage = localStorage.getItem("KT")
+const getFreshData = (key) => {
+    let daneStorage = localStorage.getItem(key)
     let daneParsed = JSON.parse(daneStorage)
+    return daneParsed
+}
 
+
+const showData = () => {
+    let daneParsed = getFreshData("KT")
     if (daneParsed !== null) {
         const daneDiv = document.querySelector("div#dane")
+        daneDiv.innerHTML = ''
         const ul = document.createElement("ul")
         daneDiv.appendChild(ul)
 
-        for (let object of daneParsed) {
+        for (let [index, object] of daneParsed.entries()) {
             const li = document.createElement("li")
-            li.textContent = `${object.imie}, ${object.nazwisko}, ${object.telefon}`
+            li.innerHTML = `${object.imie}, ${object.nazwisko}, ${object.telefon} <a href="#" onclick="deleteData(${index})">usun</a>`
             ul.appendChild(li)
         }
     }
-    
+}
+
+const deleteData = (index) => {
+    let daneParsed = getFreshData("KT")
+    if (daneParsed !== null) {
+        daneParsed.splice(index, 1)
+        let newDaneJSON = JSON.stringify(daneParsed)
+        localStorage.setItem("KT", newDaneJSON)
+        showData()
+    }
 }
 
 document.querySelector("#dodaj").addEventListener('click', () => {
-    let imie = document.querySelector('#imie').value
-    let nazwisko = document.querySelector('#nazwisko').value
-    let telefon = document.querySelector('#telefon').value
+    let imie = document.querySelector('#imie').value;
+    let nazwisko = document.querySelector('#nazwisko').value;
+    let telefon = document.querySelector('#telefon').value;
 
     let osoba = new Osoba(imie, nazwisko, telefon);
 
-    let daneStorage = localStorage.getItem("KT")
+    let daneStorage = localStorage.getItem("KT");
 
     let dane = [];
     if (daneStorage !== null) {
-        dane = JSON.parse(daneStorage)
+        dane = JSON.parse(daneStorage);
     }
 
-    dane.push(osoba)
-    localStorage.setItem("KT", JSON.stringify(dane))
+    dane.push(osoba);
+    localStorage.setItem("KT", JSON.stringify(dane));
 
-    const daneDiv = document.querySelector("div#dane ul")
-    if (daneDiv === null) {
-        showData()
-    } else {
-        const li = document.createElement("li")
-        li.textContent = `${osoba.imie}, ${osoba.nazwisko}, ${osoba.telefon}`
-        daneDiv.appendChild(li)
-    }
-})
+    showData();
+});
 
 showData()
