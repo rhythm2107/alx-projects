@@ -1,0 +1,140 @@
+<script>
+
+    class Pracownik {
+        #imie;
+        #nazwisko;
+        #pensja;
+
+        constructor(imie, nazwisko, pensja) {
+            this.#imie = imie;
+            this.#nazwisko = nazwisko
+            this.#pensja = pensja
+        }
+
+        getImie() {
+            return this.#imie
+        }
+
+        getNazwisko() {
+            return this.#nazwisko
+        }
+
+        getPensja() {
+            return this.#pensja
+        }
+
+        setImie(imie) {
+            this.#imie = imie
+        }
+
+        setNazwisko(nazwisko) {
+            this.#nazwisko = nazwisko
+        }
+
+        setPensja(pensja) {
+            this.#pensja = pensja
+        }
+
+    }
+
+    class PracownikController {
+        listaPracownikow;
+
+        constructor() {
+            this.listaPracownikow = []
+        }
+
+        dodaj(imie, nazwisko, pensja) {
+            let pracownik = new Pracownik(imie, nazwisko, pensja)
+            this.listaPracownikow.push(pracownik)
+        }
+
+        pokaz() {
+            for (let pracownik of this.listaPracownikow) {
+                console.log(pracownik.getImie(), pracownik.getNazwisko(), pracownik.getPensja())
+            }
+        }
+
+        usun(nazwisko) {
+            let pracownikIstnieje = this.sprawdzPracownika(nazwisko)
+
+            if (pracownikIstnieje[0] === true) {
+                let index = pracownikIstnieje[1]
+                this.listaPracownikow.splice(index, 1)
+                console.log("Pracownik skasowany!")
+            } else {
+                console.log("Pracownik nie istnieje!")
+            }
+        }
+
+        zmien(nazwisko, noweImie, noweNazwisko, nowaPensja) {
+            let pracownikIstnieje = this.sprawdzPracownika(nazwisko)
+
+            if (pracownikIstnieje[0] === true) {
+                let index = pracownikIstnieje[1]
+                this.listaPracownikow[index].setImie(noweImie)
+                this.listaPracownikow[index].setNazwisko(noweNazwisko)
+                this.listaPracownikow[index].setPensja(nowaPensja)
+                console.log("Dane pracownika zostaly zmienione!")
+            } else {
+                console.log("Pracownik nie istnieje!")
+            }
+        }
+
+        sprawdzPracownika(nazwisko) {
+            for (let [index, pracownik] of this.listaPracownikow.entries()) {
+                if (pracownik.getNazwisko() === nazwisko) {
+                    return [true, index]
+                }
+            }
+            return [false, -1]
+        }
+
+    }
+
+    class Firma extends PracownikController {
+        nazwaFirmy;
+
+        constructor(nazwaFirmy) {
+            super()
+            this.nazwaFirmy = nazwaFirmy
+            this.menu()
+        }
+
+        menu() {
+            while (true) {
+                let menu = Number(prompt(`Witaj w firmie ${this.nazwaFirmy}\n1-dodaj pracownika, 2-pokaz pracownikow, 3-usun pracownika, 4-zmien dane pracownikowi, 5-koniec`));
+
+                if (menu == 1) {
+                    let imie = prompt("Podaj imie:");
+                    let nazwisko = prompt("Podaj nazwisko:");
+                    let pensja = prompt("Podaj pensja:");
+                    this.dodaj(imie, nazwisko, pensja)
+
+                }
+                else if (menu == 2) {
+                    this.pokaz()
+                }
+                else if (menu == 3) {
+                    let nazwisko = prompt("Podaj nazwisko:");
+                    this.usun(nazwisko)
+                }
+                else if (menu == 4) {
+                    let nazwisko = prompt("Podaj nazwisko:");
+                    let noweImie = prompt("Podaj nowe imie:");
+                    let noweNazwisko = prompt("Podaj nowe nazwisko:");
+                    let nowaPensja = prompt("Podaj nowa pensja:");
+                    this.zmien(nazwisko, noweImie, noweNazwisko, nowaPensja)
+                }
+                else if (menu == 5) {
+                    break;
+                }
+
+            }
+
+        }
+    }
+
+    let firma = new Firma("XYZ Company!");
+
+</script>

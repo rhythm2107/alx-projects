@@ -1,115 +1,81 @@
 <script>
 
-let sklep = new Map();
-sklep.set("woda", 2.50);
-sklep.set("cola", 3.50);
-sklep.set("fanta", 4.50);
+class Pracownik{
 
-class Koszyk{
+    //ROBIMY!!!
+    //imie, nazwisko, pensja - pola prywatne
+    //konstruktor
+    //gettery i settery
 
-    zakupy;
+}
 
-    constructor(){
-        this.zakupy = new Map();
+class Kadry || PracownikController{
+
+    //ROBIMY!!!
+    //pole publiczne - listaPracownikow
+    //konstruktor inicjalizujacy wartosc tego pola do tablicy
+
+    dodaj(){
+        //zostawiamy
     }
 
-    dodajProdukt(produkt, ilosc){
-
-        /*
-
-        1. jezeli dodajemy produkt do koszyka ktory juz wczesniej zostal dodany
-
-        obecnie w koszyku: woda - 8szt
-
-        dodajemy: woda - 2szt
-
-        nowa zawartosc koszyka: woda - 10szt.
-
-
-        2. jezeli dodajemy do koszyka produkt ktory jeszcze nie zostal dodany
-
-        dodajemy: cola - 5 szt.
-
-        zawartosc koszyka: cola - 5 szt.
-
-        */
-
+    pokaz(){
+        //zostawiamy
     }
 
-    usunProdukt(produkt, ilosc){
+    usun(){
+        //zostawiamy
+    }
 
-        /*
-
-        1. jezeli ilosc w koszyku jest > od ilosci usuwanej
-
-        to odejmujemy ilosc w koszyku o wskazana wartosc
-
-        2. jezeli ilosc w koszyku jest == od ilosci usuwanej
-
-        to usuwamy caly produkt z koszyka, nie trzymamy stanow zerowych
-
-        3. jezeli ilosc w koszyku jest < od ilosci usuwanej
-
-        to komunikat o blednej ilosc
-
-        */
-        
+    zmien(){
+        //zostawiamy
     }
 
 }
 
-let koszyk = new Koszyk();
-// koszyk.dodajProdukt("woda", 5);
-// koszyk.dodajProdukt("cola", 2);
-// koszyk.dodajProdukt("woda", 3);
-// console.log(koszyk);
+class Firma extends Kadry || PracownikController{
 
-// cosnole.log("***********************");
-// koszyk.usunProdukt("woda", 5);
-// console.log(koszyk);
+    //ROBIMY!!!
+    //pole publiczne - nazwaFirmy
+    //konstruktor - suatwiajacy wartosc na poli nazwaFirmy + urchomienie metody menu()
+    
+
+    menu(){
+
+        while(true){
+
+            let menu = Number(prompt(`Witaj w firmie ${this.nazwaFirmy}\n1-dodaj pracownika, 2-pokaz pracownikow, 3-usun pracownika, 4-zmien dane pracownikowi, 5-koniec`));
+
+            if(menu == 1){
+                let imie = prompt("Podaj imie:");
+                let nazwisko = prompt("Podaj nazwisko:");
+                let pensja = prompt("Podaj pensja:");
+            }
+            else if(menu == 2){
+                
+            }
+            else if(menu == 3){
+                let nazwisko = prompt("Podaj nazwisko:");
+            }
+            else if(menu == 4){
+                let nazwisko = prompt("Podaj nazwisko:");
+                let noweImie = prompt("Podaj nowe imie:");
+                let noweNazwisko = prompt("Podaj nowe nazwisko:");
+                let nowaPensja = prompt("Podaj nowa pensja:");
+            }
+            else if(menu == 5){
+                break;
+            }
+
+        }
+
+    }
+}
+
+let firma = new Firma("XYZ Company!");
 
 
 
-
-
-
-
-
-
-
-
-// while(true){
-
-//     let menu = Number(prompt("1-dodaj produkt do koszyka, 2-pokaz zawartosc koszyka, 3-usun produkt z koszyka, 4-kasa/koniec"));
-
-//     if(menu == 1){
-//         let produkt = prompt("Podaj nazwe produktu:"); //sprawdzamy czy produkt jest w sklepie
-//         let ilosc = Number(prompt("Podaj ilosc produktu:")); //!!! o ilosc pytamy wtedy kiedy produkt jest w sklepie
-//     }
-//     else if(menu == 2){
-
-//         //Produkt: ... Ilosc: ...
-//         //Produkt: ... Ilosc: ...
-//         //Produkt: ... Ilosc: ...
-        
-//     }
-//     else if(menu == 3){
-//         let produkt = prompt("Podaj nazwe produktu:"); //sprawdzamy czy produkt jest w koszyku
-//         let ilosc = Number(prompt("Podaj ilosc produktu:")); //!!! o ilosc pytamy wtedy kiedy produkt jest w koszyku
-//     }
-//     else if(menu == 4){
-
-//         console.log("PARAGON");
-
-//         //Produkt: ... Ilosc: ... Cena: ... Wartosc: ...
-//         //Produkt: ... Ilosc: ... Cena: ... Wartosc: ...
-//         //Produkt: ... Ilosc: ... Cena: ... Wartosc: ...
-
-//         //RAZEM DO ZAPLATY: .... PLN
-//         break;
-        
-//     }
-// }
 
 
 
