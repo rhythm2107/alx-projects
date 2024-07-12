@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Projekt Blog - w wykonaniu NodeJS</h1>
+    <hr />
+    <h2>Menu</h2>
+    <ul>
+        <li>
+            <a href="/">Home</a>
+        </li>
+        <li>
+            <a href="/dodaj">Dodaj nowy wpis</a>
+        </li>
+    </ul>
+    <hr />
+
+    <% dane.forEach((wpis, index) => { %>
+
+        <p>
+            <%= wpis['tytul'] %><br/>
+            <%= wpis['tresc'] %>
+            <a href="/usun/<%= index %>">usun</a>
+            <a href="/edytuj/<%= index %>">edytuj</a>
+        </p>
+
+    <% }) %>
+</body>
+
+</html>
